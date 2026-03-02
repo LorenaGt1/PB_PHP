@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,12 +15,17 @@
             <th>Estoque</th>
             <th>Data</th>
         </tr>
-        <?php foreach($produtos as $p): ?>
+        <?php foreach($produtos as $id => $p): ?>
             <tr>
             <td><?= $p["nome"]?></td>
             <td><?= $p["valor"]?></td>
             <td><?= $p["estoque"]?></td>
             <td><?= $p["data"]?></td>
+            <td>
+                <a href="/PB_PHP/atividade_01/produto/telaEditar?id=<?=$id?>">Editar</a>
+
+                <a href="/PB_PHP/atividade_01/produto/excluir?id=<?=$id?>">Excluir</a>
+            </td>
         </tr>
             <?php endforeach; ?>
         <table>

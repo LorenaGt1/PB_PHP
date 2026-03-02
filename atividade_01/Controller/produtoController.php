@@ -28,4 +28,22 @@ class ProdutoController{
         echo"<pre>";
         require "View/produtoListar.php";
     }
+
+    public function telaEditar(){
+        $produto = Produto :: buscar ($_GET["id"]);
+        require"View/produtoEditar.php";
+    }
+
+    public function atualizar(){
+        $usuario = new Produto($_POST["nome"], $_POST["valor"], $_POST["estoque"], $_POST["data"]);
+        $usuario->atualizar($_GET["id"]);
+        header ("Location: /PB_PHP/atividade_01/produto/telaEditar?id=".($_GET['id']));
+        exit;
+    }
+
+    public function excluir(){
+        Produto::excluir($_GET["id"]);
+        header("Location: /PB_PHP/atividade_01/produto/listar");
+        exit;
+}
 }
