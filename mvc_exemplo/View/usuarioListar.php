@@ -9,16 +9,18 @@
     <h2>Usuários</h2>
     <table border = "1">
         <tr>
-            <a href="PB_PHP/mvc_exemplo/usuario/telaCadastro">Ir para a tela cadastrar</a>
+            <a href="/PB_PHP/mvc_exemplo/usuario/telaCadastro">Ir para a tela cadastrar</a>
             <th>Nome</th>
             <th>Email</th>
             <th>Ações</th>
         </tr>
-        <?php foreach($usuarios as $u): ?>
+        <?php foreach($usuarios as $id => $u): ?>
             <tr>
             <td><?= $u["nome"]?></td>
             <td><?= $u["email"]?></td>
-            <td>próxima aula</td>
+            <td>
+                <a href="/PB_PHP/mvc_exemplo/usuario/telaEditar?id=<?=$id?>">Editar</a>
+            </td>
         </tr>
             <?php endforeach; ?>
 

@@ -6,16 +6,24 @@ $usuarioController = new UsuarioController();
 $route = $_GET["route"] ?? '';
 
 switch ($route){
-    case "usuario/telaCadastro";
+    case "usuario/telaCadastro":
         $usuarioController -> telaCadastro();
         break;
 
-    case "usuario/Salvar";
+    case "usuario/Salvar":
         $usuarioController->cadastrar();
         break;
 
-    case"usuario/listar";
+    case"usuario/listar":
         $usuarioController -> listarUsuarios();
+        break;
+
+    case"usuario/telaEditar":
+        $usuarioController->telaEditar();
+        break;
+
+    case"usuario/atualizar":
+        $usuarioController->atualizar();
         break;
 
     default:
