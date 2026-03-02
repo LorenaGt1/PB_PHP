@@ -20,6 +20,8 @@
             <td><?= $u["email"]?></td>
             <td>
                 <a href="/PB_PHP/mvc_exemplo/usuario/telaEditar?id=<?=$id?>">Editar</a>
+
+                <a href="/PB_PHP/mvc_exemplo/usuario/excluir?id=<?=$id?>">Excluir</a>
             </td>
         </tr>
             <?php endforeach; ?>
